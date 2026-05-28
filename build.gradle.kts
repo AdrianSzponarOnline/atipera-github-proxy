@@ -20,7 +20,7 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.wiremock:wiremock:3.9.1")
+	testImplementation("org.wiremock:wiremock-standalone:3.13.2")
 }
 
 
