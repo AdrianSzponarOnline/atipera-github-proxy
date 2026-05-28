@@ -1,6 +1,6 @@
 package com.atipera.githubproxy;
 
-public record ErrorResponse(
+record ErrorResponse(
         int status,
         String message
 ) {}
