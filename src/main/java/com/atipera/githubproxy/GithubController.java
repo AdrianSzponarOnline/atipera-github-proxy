@@ -19,7 +19,7 @@ public class GithubController {
     }
 
     @GetMapping("/users/{username}/repos")
-    public List<RepoResponse> getUserRepositories(@PathVariable String username) {
+    List<RepoResponse> getUserRepositories(@PathVariable String username) {
         return githubService.getNonForkRepositories(username);
     }
 }
