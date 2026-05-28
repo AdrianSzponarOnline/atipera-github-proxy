@@ -24,7 +24,9 @@ class GithubService
     private RepoResponse mapToRepoResponse(GithubRepoDto repoDto){
         List<BranchResponse> branches = githubClient.getBranches(repoDto.owner().login(), repoDto.name())
                 .stream()
-                .map(branch -> new BranchResponse(branch.name(), branch.commit().sha()))
+                .map(branch -> new BranchResponse(
+                        branch.name(),
+                        branch.commit().sha()))
                 .toList();
         return new RepoResponse(repoDto.name(), repoDto.owner().login(), branches);
     }

@@ -9,7 +9,7 @@ import org.springframework.web.client.HttpClientErrorException;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(HttpClientErrorException.NotFound.class)
-    public ResponseEntity<ErrorResponse> handleNotFoundException(HttpClientErrorException.NotFound e) {
+    public ResponseEntity<ErrorResponse> handleNotFoundException() {
         ErrorResponse errorResponse = new ErrorResponse(
                 HttpStatus.NOT_FOUND.value(),
                 "Github user does not exist"
