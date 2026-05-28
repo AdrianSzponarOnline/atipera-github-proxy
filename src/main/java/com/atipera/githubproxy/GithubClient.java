@@ -1,20 +1,15 @@
 package com.atipera.githubproxy;
-
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
-
 import java.util.List;
 
 @Component
 class GithubClient {
     private final RestClient restClient;
 
-    public GithubClient(@Value("${github.api.url}") String baseUrl){
-        this.restClient = RestClient.builder()
-                .baseUrl(baseUrl)
-                .build();
+    GithubClient(RestClient githubRestClient) {
+        this.restClient = githubRestClient;
     }
 
     List<GithubRepoDto> getUserRepositories(String username){
